@@ -15,11 +15,9 @@ jobs:
       with:
         ref: 'master'
     - name: Setup for build
-      run:
+      run: |
         apt update
-      run:
         apt install devscripts
-      run:
         DEBIAN_FRONTEND=noninteractive mk-build-deps -i -r -t 'apt-get -y' debian/control
     - name: Build
       run:
