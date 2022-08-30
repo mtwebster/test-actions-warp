@@ -16,9 +16,9 @@ jobs:
         ref: 'master'
     - name: Setup for build
       run: |
-        apt update
-        apt install devscripts
-        DEBIAN_FRONTEND=noninteractive mk-build-deps -i -r -t 'apt-get -y' debian/control
+        sudo apt update
+        sudo apt install devscripts
+        sudo DEBIAN_FRONTEND=noninteractive mk-build-deps -i -r -t 'apt-get -y' debian/control
     - name: Build
       run:
         dpkg-buildpackage -us -uc
