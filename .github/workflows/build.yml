@@ -16,6 +16,8 @@ jobs:
         ref: 'master'
     - name: Setup for build
       run:
+        apt update
+        apt install devscripts
         mk-build-deps -iry
     - name: Build
       run:
