@@ -18,9 +18,9 @@ jobs:
       run:
         apt update
         apt install devscripts
-        mk-build-deps -iry
+        DEBIAN_FRONTEND=noninteractive mk-build-deps -i -r -t 'apt-get -y' debian/control
     - name: Build
       run:
-        dpkg-buildpackage
+        dpkg-buildpackage -us -uc
 
 
