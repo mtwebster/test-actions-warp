@@ -17,7 +17,7 @@ jobs:
     - name: Setup for build
       run: |
         sudo apt update
-        sudo apt install devscripts
+        sudo apt install devscripts equivs
         sudo DEBIAN_FRONTEND=noninteractive mk-build-deps -i -r -t 'apt-get -y' debian/control
     - name: Build
       run:
