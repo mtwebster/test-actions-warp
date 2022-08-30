@@ -1,0 +1,25 @@
+name: Test build
+
+on:
+  push:
+    branches: [ $default-branch ]
+  pull_request:
+    branches: [ $default-branch ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-22.04
+
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        ref: 'master'
+    - name: Setup for build
+      run:
+        mk-build-deps -iry
+    - name: Build
+      run:
+        dpkg-buildpackage
+
+
