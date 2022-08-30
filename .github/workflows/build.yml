@@ -4,11 +4,16 @@ on:
   push:
     branches:
       - master
+  pull_request:
+    branches:
+      - master
+
 
 jobs:
   build:
-
     runs-on: ubuntu-22.04
+    container:
+      image: linuxmintd/mint21-amd64
 
     steps:
     - uses: actions/checkout@v3
