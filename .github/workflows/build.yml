@@ -14,4 +14,8 @@ jobs:
     uses: mtwebster/github-actions/.github/workflows/do-builds.yml@main
     with:
       commit_id: master
-      dependencies: "linuxmint/xapp, linuxmint/cinnamon-desktop"
+      ############################## Comma separated list - like 'linuxmint/xapp, linuxmint/cinnamon-desktop'
+      dependencies:
+      ##############################
+
+
