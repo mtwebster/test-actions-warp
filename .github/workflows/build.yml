@@ -1,4 +1,4 @@
-name: Test build
+name: Build
 
 on:
   push:
@@ -7,25 +7,10 @@ on:
   pull_request:
     branches:
       - master
-
+  workflow_dispatch:
 
 jobs:
   build:
-    runs-on: ubuntu-22.04
-    container:
-      image: linuxmintd/mint21-amd64
-
-    steps:
-    - uses: actions/checkout@v3
-      with:
-        ref: 'master'
-    - name: Setup for build
-      run: |
-        sudo apt update
-        sudo apt install devscripts equivs
-        sudo DEBIAN_FRONTEND=noninteractive mk-build-deps -i -r -t 'apt-get -y' debian/control
-    - name: Build
-      run:
-        dpkg-buildpackage -us -uc
-
-
+    uses: mtwebster/github-actions/.github/workflows/do-builds.yml@main
+    with:
+      commit_id: master
