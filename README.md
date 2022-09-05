@@ -1,5 +1,7 @@
 ## Send and receive files across a local network
 
+![Package build (master)](https://github.com/mtwebster/test-actions-warp/actions/workflows/build.yml/badge.svg)
+
 ##### Other platforms (unofficial):
 
 - Android: https://github.com/slowscript/warpinator-android
